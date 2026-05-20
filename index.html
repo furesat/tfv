@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6 Konsept Web Sitesi | Konsept Seçim Landing Page</title>
+    <meta
+      name="description"
+      content="Müşteri için hazırlanan 6 farklı web konseptini tek ekranda karşılaştırın, önizleyin ve seçtiğiniz konsepte tek tıkla gidin."
+    />
+    <meta
+      name="keywords"
+      content="web sitesi konsepti, landing page, tasarım seçimi, konsept karşılaştırma, müşteri sunumu"
+    />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="author" content="TFV Project" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="6 Konsept Web Sitesi" />
+    <meta
+      property="og:description"
+      content="6 farklı tasarım konseptini inceleyin, beğendiğiniz siteye hemen geçin."
+    />
+    <meta property="og:url" content="./" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="6 Konsept Web Sitesi" />
+    <meta
+      name="twitter:description"
+      content="Müşteri seçimi için hazırlanan 6 konsept web sitesi tek sayfada."
+    />
+    <link rel="canonical" href="./" />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4f6fb;
+        --card: #ffffff;
+        --text: #1d2738;
+        --muted: #5b677d;
+        --accent: #3662ff;
+        --accent-hover: #274ce6;
+        --border: #dfe5f2;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: linear-gradient(170deg, #eef2ff 0%, var(--bg) 50%, #ffffff 100%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 2.5rem 1rem 3rem;
+      }
+
+      .hero { text-align: center; margin-bottom: 2rem; }
+      .hero h1 { margin: 0 0 .75rem; font-size: clamp(1.7rem, 4vw, 2.6rem); }
+      .hero p { margin: 0 auto; max-width: 700px; color: var(--muted); line-height: 1.6; }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1rem;
+        box-shadow: 0 10px 24px rgba(27, 46, 94, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: .75rem;
+      }
+
+      .card h2 { margin: 0; font-size: 1.08rem; }
+      .card p { margin: 0; color: var(--muted); line-height: 1.5; min-height: 3.5rem; }
+
+      .card a {
+        margin-top: auto;
+        text-decoration: none;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+        padding: .65rem .8rem;
+        border-radius: 10px;
+      }
+
+      .card a:hover,
+      .card a:focus-visible { background: var(--accent-hover); }
+
+      footer {
+        margin-top: 2rem;
+        text-align: center;
+        color: var(--muted);
+        font-size: .92rem;
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "6 Konsept Web Sitesi",
+        "description": "Müşteri seçimi için hazırlanmış altı farklı web sitesi konsepti.",
+        "hasPart": [
+          { "@type": "WebPage", "name": "Konsept 1", "url": "./1/index.html" },
+          { "@type": "WebPage", "name": "Konsept 2", "url": "./2/index.html" },
+          { "@type": "WebPage", "name": "Konsept 3", "url": "./3/index.html" },
+          { "@type": "WebPage", "name": "Konsept 4", "url": "./4/index.html" },
+          { "@type": "WebPage", "name": "Konsept 5", "url": "./5/index.html" },
+          { "@type": "WebPage", "name": "Konsept 6", "url": "./6/index.html" }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <h1>6 Konsept Web Sitesi Sunumu</h1>
+        <p>
+          Aşağıdaki kartlardan her bir konsepti ayrı ayrı inceleyebilirsiniz. Müşteri,
+          beğendiği tasarım seçeneğine tıklayarak ilgili siteye geçiş yapabilir.
+        </p>
+      </header>
+
+      <section class="grid" aria-label="Konsept listesi">
+        <article class="card"><h2>Konsept 1</h2><p>Klasik kurumsal yapı ve çok sayfalı navigasyon yaklaşımı.</p><a href="./1/index.html">Siteyi Aç</a></article>
+        <article class="card"><h2>Konsept 2</h2><p>Görsel odaklı ve hızlı sunum yapan tek sayfa yaklaşımı.</p><a href="./2/index.html">Siteyi Aç</a></article>
+        <article class="card"><h2>Konsept 3</h2><p>Minimalist içerik düzeniyle sade ve modern görünüm.</p><a href="./3/index.html">Siteyi Aç</a></article>
+        <article class="card"><h2>Konsept 4</h2><p>Denge odaklı UI ile detaylı içerik ve bölüm geçişleri.</p><a href="./4/index.html">Siteyi Aç</a></article>
+        <article class="card"><h2>Konsept 5</h2><p>Hizmet vurgusu güçlü, ürün/sistem anlatımı ön planda.</p><a href="./5/index.html">Siteyi Aç</a></article>
+        <article class="card"><h2>Konsept 6</h2><p>Teknoloji perspektifinde güçlü görsellerle modern yaklaşım.</p><a href="./6/index.html">Siteyi Aç</a></article>
+      </section>
+
+      <footer>© 2026 Konsept Seçim Landing Page</footer>
+    </main>
+  </body>
+</html>
