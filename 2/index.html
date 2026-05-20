@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tourismus Förder Verband Österreich — Das stille Handwerk der Gastfreundschaft</title>
+<meta name="description" content="Eine Initiative für kleine Gastgeber in Österreich. Wir begleiten Pensionen, Ferienwohnungen und Familienbetriebe in digitaler Sichtbarkeit, Direktbuchung und nachhaltigem Tourismus." />
+
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="apple-touch-icon" href="assets/logo.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   ALPENGLÜHEN — TFV Österreich
+   Editorial Premium Concept
+   ============================================ */
+
+:root {
+  --cream: #F5F1E8;
+  --cream-deep: #EDE6D6;
+  --forest: #2D3B2D;
+  --forest-soft: #3A4A3A;
+  --sienna: #B5573A;
+  --sienna-deep: #964226;
+  --stone: #A8A095;
+  --stone-light: #C7BFB3;
+  --glacier: #7A8B8C;
+  --ink: #1A1F1A;
+
+  --serif: 'Cormorant Garamond', 'GT Sectra', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', 'Söhne Mono', monospace;
+
+  --max-width: 1440px;
+  --gutter: clamp(1.5rem, 4vw, 4rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--cream);
+  color: var(--forest);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Paper grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================
+   TYPOGRAPHY BASE
+   ============================================ */
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  color: var(--forest);
+}
+
+.serif-italic {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.body-text {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--forest-soft);
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+  transition: transform 600ms cubic-bezier(.2,.8,.2,1);
+}
+
+.link-underline:hover::after {
+  transform-origin: right;
+  transform: scaleX(0);
+  animation: redraw 800ms cubic-bezier(.2,.8,.2,1) 200ms forwards;
+}
+
+@keyframes redraw {
+  to { transform-origin: left; transform: scaleX(1); }
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   NAV
+   ============================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--forest);
+  transition: background 500ms ease, padding 400ms ease, border-color 500ms ease;
+  border-bottom: 1px solid transparent;
+}
+
+.nav.scrolled {
+  background: rgba(245, 241, 232, 0.92);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  border-bottom-color: var(--stone-light);
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  color: var(--forest);
+}
+
+.nav-logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: block;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  transition: transform 500ms cubic-bezier(.2,.8,.2,1);
+}
+
+.nav-logo:hover .nav-logo-mark {
+  transform: rotate(-3deg) scale(1.04);
+}
+
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.nav-logo-text strong {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: 0.005em;
+  color: var(--forest);
+}
+
+.nav-logo-text small {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: 3px;
+}
+
+.nav-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.nav-meta a {
+  margin-left: 2rem;
+  color: var(--forest);
+}
+
+@media (max-width: 700px) {
+  .nav-logo-text { display: none; }
+  .nav-meta a { margin-left: 1.2rem; font-size: 9px; }
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  padding: 8rem var(--gutter) 4rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+  position: relative;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 2rem;
+}
+
+.hero-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(3.5rem, 8.5vw, 9rem);
+  line-height: 0.92;
+  color: var(--forest);
+  letter-spacing: -0.025em;
+  margin: 1rem 0;
+}
+
+.hero-title .line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-title .line span {
+  display: inline-block;
+  transform: translateY(110%);
+  animation: lineRise 1.2s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.hero-title .line:nth-child(2) span { animation-delay: 0.1s; }
+.hero-title .line:nth-child(3) span { animation-delay: 0.2s; }
+.hero-title .line:nth-child(4) span { animation-delay: 0.3s; }
+
+@keyframes lineRise {
+  to { transform: translateY(0); }
+}
+
+.hero-title .sienna {
+  color: var(--sienna);
+}
+
+.hero-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hero-imprint {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--stone);
+  max-width: 360px;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeIn 1s ease 1s forwards;
+}
+
+.hero-cta {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--forest);
+  opacity: 0;
+  animation: fadeIn 1s ease 1.2s forwards;
+}
+
+.hero-cta::after {
+  content: '→';
+  margin-left: 0.5rem;
+  display: inline-block;
+  transition: transform 400ms cubic-bezier(.2,.8,.2,1);
+}
+
+.hero-cta:hover::after {
+  transform: translateX(8px);
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Hero image */
+.hero-image {
+  position: relative;
+  height: calc(100vh - 12rem);
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--forest);
+}
+
+.hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(181, 87, 58, 0.15), transparent 60%),
+    linear-gradient(to bottom, transparent 40%, rgba(45, 59, 45, 0.4));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.3 0 0 0 0 0.3 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-image-inner {
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/alpfotos.png');
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.35) saturate(0.65) contrast(0.95) brightness(0.82);
+  animation: imageReveal 2s cubic-bezier(.2,.8,.2,1) 0.3s both;
+}
+
+@keyframes imageReveal {
+  from { transform: scale(1.08); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.hero-image-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.7;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 7rem;
+  }
+  .hero-image {
+    height: 60vh;
+    min-height: 400px;
+  }
+}
+
+/* ============================================
+   MANIFESTO
+   ============================================ */
+.manifesto {
+  padding: 12rem var(--gutter) 12rem;
+  position: relative;
+}
+
+.manifesto-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.manifesto-chapter {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.manifesto-chapter::before,
+.manifesto-chapter::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--sienna);
+  opacity: 0.5;
+}
+
+.manifesto-text {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.8rem, 3.6vw, 3.4rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--forest);
+}
+
+.manifesto-text em {
+  font-style: italic;
+  color: var(--sienna);
+}
+
+.manifesto-text .drop {
+  font-style: italic;
+  font-size: 1.15em;
+}
+
+.manifesto-sign {
+  margin-top: 4rem;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* ============================================
+   PROBLEM — KAPITEL
+   ============================================ */
+.problem {
+  padding: 8rem var(--gutter) 10rem;
+  background: var(--cream-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.problem::before {
+  content: 'I.';
+  position: absolute;
+  top: 8rem;
+  right: -2rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 32rem;
+  line-height: 0.8;
+  color: var(--cream);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+  font-weight: 300;
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 8rem;
+  align-items: end;
+  position: relative;
+  z-index: 2;
+}
+
+.section-head-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sienna);
+}
+
+.section-head-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1;
+  color: var(--forest);
+  letter-spacing: -0.02em;
+}
+
+.chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.chapter {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 3rem;
+  padding: 4rem 0;
+  border-top: 1px solid var(--stone-light);
+  align-items: start;
+  transition: background 600ms ease;
+}
+
+.chapter:last-child {
+  border-bottom: 1px solid var(--stone-light);
+}
+
+.chapter:hover {
+  background: rgba(245, 241, 232, 0.5);
+}
+
+.chapter-numeral {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(4rem, 7vw, 7rem);
+  line-height: 0.9;
+  color: var(--sienna);
+}
+
+.chapter-body {
+  padding-top: 1rem;
+}
+
+.chapter-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  color: var(--forest);
+  margin-bottom: 1.5rem;
+}
+
+.chapter-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--forest-soft);
+  max-width: 560px;
+}
+
+.chapter-meta {
+  margin-top: 1.5rem;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+@media (max-width: 900px) {
+  .section-head { grid-template-columns: 1fr; gap: 1.5rem; }
+  .chapter { grid-template-columns: 1fr; gap: 1rem; }
+  .problem::before { font-size: 18rem; right: -1rem; }
+}
+
+/* ============================================
+   INHALTSVERZEICHNIS — Services as TOC
+   ============================================ */
+.toc-section {
+  padding: 10rem var(--gutter) 12rem;
+  position: relative;
+}
+
+.toc-list {
+  margin-top: 6rem;
+  border-top: 1px solid var(--forest);
+}
+
+.toc-row {
+  display: grid;
+  grid-template-columns: 60px 1fr auto 80px;
+  gap: 2rem;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid var(--stone-light);
+  cursor: pointer;
+  align-items: baseline;
+  transition: padding 500ms cubic-bezier(.2,.8,.2,1), background 400ms ease;
+}
+
+.toc-row:hover {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background: var(--cream-deep);
+}
+
+.toc-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--stone);
+}
+
+.toc-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  line-height: 1.1;
+  color: var(--forest);
+  transition: color 300ms ease, font-style 300ms ease;
+}
+
+.toc-row:hover .toc-title {
+  font-style: italic;
+  color: var(--sienna);
+}
+
+.toc-dots {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--stone-light);
+  letter-spacing: 0.2em;
+  overflow: hidden;
+  white-space: nowrap;
+  align-self: end;
+  padding-bottom: 0.4rem;
+}
+
+.toc-page {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--forest);
+  text-align: right;
+}
+
+.toc-detail {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 700ms cubic-bezier(.2,.8,.2,1), padding 500ms ease;
+  padding: 0;
+}
+
+.toc-row.active + .toc-detail {
+  max-height: 600px;
+  padding: 0 0 3.5rem 0;
+}
+
+.toc-row.active .toc-title {
+  font-style: italic;
+  color: var(--sienna);
+}
+
+.toc-detail-body {
+  grid-column: 2;
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--forest-soft);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.toc-detail-body p { margin-bottom: 1rem; }
+
+.toc-detail-body .signature {
+  margin-top: 2rem;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+@media (max-width: 900px) {
+  .toc-row { grid-template-columns: 40px 1fr 60px; }
+  .toc-dots { display: none; }
+  .toc-detail { grid-template-columns: 40px 1fr; }
+}
+
+/* ============================================
+   BILDERWELT — DREI SZENEN
+   ============================================ */
+.bilderwelt {
+  padding: 10rem var(--gutter) 10rem;
+  background: var(--forest);
+  color: var(--cream);
+  position: relative;
+}
+
+.bilderwelt .section-head-title { color: var(--cream); }
+.bilderwelt .section-head-label { color: var(--sienna); }
+
+.bilderwelt-intro {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  line-height: 1.5;
+  color: var(--stone-light);
+  max-width: 900px;
+  margin: 0 0 8rem 0;
+  letter-spacing: -0.005em;
+}
+
+.bilderwelt-intro em {
+  color: var(--sienna);
+  font-style: italic;
+}
+
+.szene {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  margin-bottom: 8rem;
+  align-items: start;
+}
+
+.szene:nth-child(even) {
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.szene:nth-child(even) .szene-image {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.szene:nth-child(even) .szene-text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.szene:last-child { margin-bottom: 0; }
+
+.szene-image {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a2a1a 0%, #2D3B2D 100%);
+}
+
+.szene-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.3 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.szene-image-inner {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(0.7) sepia(0.15) contrast(1.05) brightness(0.88);
+  transition: transform 1.5s cubic-bezier(.2,.8,.2,1), filter 1.5s ease;
+}
+
+.szene:hover .szene-image-inner {
+  transform: scale(1.04);
+  filter: grayscale(0.2) sepia(0.2) contrast(1.05) brightness(0.95);
+}
+
+.szene-meta {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.75;
+  z-index: 2;
+}
+
+.szene-text {
+  padding-top: 1rem;
+}
+
+.szene-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  margin-bottom: 1.5rem;
+}
+
+.szene-name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+  line-height: 0.95;
+  color: var(--cream);
+  margin-bottom: 1rem;
+  letter-spacing: -0.015em;
+}
+
+.szene-place {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--stone);
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+.szene-body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--stone-light);
+  max-width: 540px;
+}
+
+.szene-body p { margin-bottom: 1.2rem; }
+.szene-body p:first-letter {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 3em;
+  float: left;
+  line-height: 0.85;
+  margin: 0.1em 0.1em 0 0;
+  color: var(--sienna);
+}
+
+.szene-body p:not(:first-of-type):first-letter {
+  font-size: 1em;
+  float: none;
+  font-style: normal;
+  margin: 0;
+  color: inherit;
+}
+
+.szene-quote {
+  margin-top: 2.5rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--sienna);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--cream);
+  max-width: 500px;
+}
+
+@media (max-width: 900px) {
+  .szene, .szene:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .szene:nth-child(even) .szene-image,
+  .szene:nth-child(even) .szene-text {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* ============================================
+   PAKETE — Book page
+   ============================================ */
+.pakete {
+  padding: 10rem var(--gutter) 12rem;
+}
+
+.paket {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  padding: 5rem 0;
+  border-top: 1px solid var(--stone-light);
+  align-items: start;
+}
+
+.paket:last-child {
+  border-bottom: 1px solid var(--stone-light);
+}
+
+.paket-left {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+}
+
+.paket-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.paket-name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  line-height: 1;
+  color: var(--forest);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.paket-price {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--stone);
+  margin-top: 1.5rem;
+}
+
+.paket-body {
+  padding-top: 1.5rem;
+}
+
+.paket-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.45;
+  color: var(--forest);
+  margin-bottom: 2.5rem;
+  max-width: 580px;
+}
+
+.paket-description {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--forest-soft);
+  margin-bottom: 2.5rem;
+  max-width: 580px;
+}
+
+.paket-list {
+  list-style: none;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: var(--forest);
+  border-top: 1px solid var(--stone-light);
+  padding-top: 1.5rem;
+}
+
+.paket-list li {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 1rem;
+  padding: 0.4rem 0;
+}
+
+.paket-list li::before {
+  content: '—';
+  color: var(--sienna);
+  font-style: normal;
+}
+
+.paket-link {
+  margin-top: 3rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--sienna);
+  display: inline-block;
+}
+
+.paket-link::after {
+  content: ' →';
+  transition: transform 400ms ease;
+  display: inline-block;
+}
+
+.paket-link:hover::after {
+  transform: translateX(6px);
+}
+
+@media (max-width: 900px) {
+  .paket { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0; }
+  .paket-left { position: relative; top: 0; }
+}
+
+/* ============================================
+   TESTIMONIAL
+   ============================================ */
+.testimonial {
+  padding: 12rem var(--gutter);
+  background: var(--cream-deep);
+  text-align: center;
+  position: relative;
+}
+
+.testimonial-mark {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14rem;
+  line-height: 0.7;
+  color: var(--sienna);
+  opacity: 0.25;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.testimonial-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.8rem, 3.4vw, 3rem);
+  line-height: 1.3;
+  color: var(--forest);
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  letter-spacing: -0.005em;
+}
+
+.testimonial-cite {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.testimonial-cite::before {
+  content: '— ';
+  color: var(--sienna);
+}
+
+/* ============================================
+   KONTAKT
+   ============================================ */
+.kontakt {
+  padding: 14rem var(--gutter) 8rem;
+  background: var(--forest);
+  color: var(--cream);
+  position: relative;
+}
+
+.kontakt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--sienna) 30%, var(--sienna) 70%, transparent);
+}
+
+.kontakt-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.kontakt-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.kontakt-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--sienna);
+  opacity: 0.4;
+}
+
+.kontakt-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4.8vw, 4.5rem);
+  line-height: 1.2;
+  color: var(--cream);
+  margin-bottom: 4rem;
+  letter-spacing: -0.015em;
+}
+
+.kontakt-text em {
+  color: var(--sienna);
+  font-style: italic;
+}
+
+.kontakt-signature {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0 0 3rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(168, 160, 149, 0.25);
+  border-bottom: 1px solid rgba(168, 160, 149, 0.25);
+  max-width: 480px;
+}
+
+.kontakt-signature-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.05);
+  flex-shrink: 0;
+}
+
+.kontakt-signature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kontakt-signature-name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--cream);
+  letter-spacing: 0.005em;
+}
+
+.kontakt-signature-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sienna);
+}
+
+.kontakt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-top: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(168, 160, 149, 0.25);
+}
+
+.kontakt-block-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sienna);
+  margin-bottom: 1rem;
+}
+
+.kontakt-block-content {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--cream);
+}
+
+.kontakt-block-content a {
+  font-style: italic;
+  border-bottom: 1px solid var(--sienna);
+  padding-bottom: 1px;
+  transition: color 300ms ease;
+}
+
+.kontakt-block-content a:hover {
+  color: var(--sienna);
+}
+
+@media (max-width: 900px) {
+  .kontakt-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  padding: 4rem var(--gutter);
+  background: var(--forest);
+  color: var(--stone);
+  border-top: 1px solid rgba(168, 160, 149, 0.15);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-links a {
+  margin-left: 2rem;
+  transition: color 300ms ease;
+}
+
+.footer-links a:hover { color: var(--cream); }
+
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(.2,.8,.2,1), transform 1.2s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-reveal-inner {
+  transform: scale(1.06);
+  transition: transform 2s cubic-bezier(.2,.8,.2,1);
+}
+
+.image-reveal.visible .image-reveal-inner {
+  transform: scale(1);
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <a href="#" class="nav-logo">
+    <img src="assets/logo.png" alt="TFV" class="nav-logo-mark" />
+    <span class="nav-logo-text">
+      <strong>Tourismusförderverband</strong>
+      <small>Österreich · iG · 2026</small>
+    </span>
+  </a>
+  <div class="nav-meta">
+    <a href="#manifest" class="link-underline">Manifest</a>
+    <a href="#leistungen" class="link-underline">Leistungen</a>
+    <a href="#bilderwelt" class="link-underline">Bilderwelt</a>
+    <a href="#kontakt" class="link-underline">Kontakt</a>
+  </div>
+</nav>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-meta-top">
+      <span>Nº 001 · Frühjahr 2026</span>
+      <span>Graz · Salzburg · Tirol</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="line"><span>Das stille</span></span>
+      <span class="line"><span>Handwerk der</span></span>
+      <span class="line"><span>Gastfreund<span class="sienna">-</span></span></span>
+      <span class="line"><span>schaft.</span></span>
+    </h1>
+
+    <div class="hero-bottom">
+      <p class="hero-imprint">
+        Eine Initiative für kleine Gastgeber<br>
+        in Österreich. Verein in Gründung.<br>
+        Sichtbarkeit · Direktbuchung · Nachhaltigkeit.
+      </p>
+      <a href="#manifest" class="hero-cta link-underline">Lesen, was wir tun</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="hero-image-inner"></div>
+    <div class="hero-image-caption">
+      <span>Tafel I · Im Tal</span>
+      <span>Tirol · Österreich</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     MANIFESTO
+     ============================================ -->
+<section class="manifesto" id="manifest">
+  <div class="manifesto-inner">
+    <div class="manifesto-chapter reveal">Kapitel Null · Vom Wesen der Arbeit</div>
+
+    <p class="manifesto-text reveal">
+      <span class="drop">Tourismus</span> ist kein Marktplatz. Er ist <em>das Vertrauen</em> zwischen einem Menschen, der ankommt, und einem Menschen, der wartet. Wir glauben, dass die kleinen Häuser <em>— die Pensionen, die Höfe, die stillen Ferienwohnungen —</em> das Rückgrat dieses Vertrauens bilden. Und dass sie heute die Hilfe verdienen, sichtbar zu bleiben, ohne sich selbst zu verlieren.
+    </p>
+
+    <div class="manifesto-sign reveal">Tourismus Förder Verband · Österreich</div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROBLEM — DIE VIER KAPITEL
+     ============================================ -->
+<section class="problem">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-label reveal">Bestandsaufnahme · 2026</div>
+      <h2 class="section-head-title reveal">
+        Was den<br>
+        Gastgebern <em>fehlt.</em>
+      </h2>
+    </div>
+
+    <div class="chapters">
+
+      <article class="chapter reveal">
+        <div class="chapter-numeral">I.</div>
+        <div class="chapter-body">
+          <h3 class="chapter-title">Die leeren Zimmer</h3>
+          <p class="chapter-text">
+            Es gibt in Österreich tausende Betten, die jede Nacht ungenutzt bleiben — nicht weil niemand sie sucht, sondern weil niemand sie findet. Die Sichtbarkeit hängt heute an Algorithmen, Plattformen und einer Pflege, die im Alltag selten Platz hat.
+          </p>
+          <div class="chapter-meta">Sichtbarkeit · Vertrieb · Direktbuchung</div>
+        </div>
+      </article>
+
+      <article class="chapter reveal">
+        <div class="chapter-numeral">II.</div>
+        <div class="chapter-body">
+          <h3 class="chapter-title">Die fehlende Technik</h3>
+          <p class="chapter-text">
+            Webseiten, die zehn Jahre alt sind. Kalender, die per Hand geführt werden. Channel Manager, von denen man gehört hat. Die Werkzeuge bestehen — aber zwischen ihnen und dem Gastgeber liegt oft eine Hürde, die sich nicht mit einer Anleitung überbrücken lässt.
+          </p>
+          <div class="chapter-meta">Website · PMS · Channel Manager · Booking Engine</div>
+        </div>
+      </article>
+
+      <article class="chapter reveal">
+        <div class="chapter-numeral">III.</div>
+        <div class="chapter-body">
+          <h3 class="chapter-title">Die Komplexität der Plattformen</h3>
+          <p class="chapter-text">
+            Booking, Airbnb, Google Travel, regionale Portale, Bewertungsseiten. Jede Welt hat ihre Regeln, ihre Logik, ihre Aufmerksamkeit. Wer alles pflegen will, hat keine Zeit mehr für den Gast. Wer nichts pflegt, verliert ihn.
+          </p>
+          <div class="chapter-meta">Plattform-Pflege · Reputation · Bewertungen</div>
+        </div>
+      </article>
+
+      <article class="chapter reveal">
+        <div class="chapter-numeral">IV.</div>
+        <div class="chapter-body">
+          <h3 class="chapter-title">Der Betrieb, der Zeit verschlingt</h3>
+          <p class="chapter-text">
+            Reinigung, Check-in, Wäsche, Anfragen am Sonntagabend, Beschwerden, Frühstück, Schlüsselübergabe. Die operative Last fällt vor allem auf jene, die ohnehin am meisten geben. Sie ist selten Thema in Konzepten — und doch der Grund, warum viele aufgeben.
+          </p>
+          <div class="chapter-meta">Operative Entlastung · Partnernetzwerk · Service</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     UNSERE ANTWORT — INHALTSVERZEICHNIS
+     ============================================ -->
+<section class="toc-section" id="leistungen">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-label reveal">Unsere Antwort · Inhaltsverzeichnis</div>
+      <h2 class="section-head-title reveal">
+        Was wir <em>tun.</em><br>
+        Und wie wir es tun.
+      </h2>
+    </div>
+
+    <div class="toc-list reveal" id="tocList">
+
+      <div class="toc-row" data-toc="0">
+        <span class="toc-num">01</span>
+        <span class="toc-title">Sichtbarkeit & Buchungsplattformen</span>
+        <span class="toc-dots">···················································</span>
+        <span class="toc-page">04</span>
+      </div>
+      <div class="toc-detail">
+        <div></div>
+        <div class="toc-detail-body">
+          <p>Wir setzen Häuser ins Licht der Algorithmen, ohne ihnen ihre Stille zu nehmen. Booking, Airbnb, Google Travel, regionale Portale — jede Plattform wird so eingerichtet, dass sie für sich arbeitet und nicht gegen den Gastgeber.</p>
+          <p>Das Ziel ist nicht Lärm, sondern Auffindbarkeit. Ein Haus, das zur richtigen Zeit am richtigen Ort auf dem Bildschirm des richtigen Gastes erscheint.</p>
+          <div class="signature">Tafel 04 — Sichtbarkeit</div>
+        </div>
+      </div>
+
+      <div class="toc-row" data-toc="1">
+        <span class="toc-num">02</span>
+        <span class="toc-title">Direktbuchung & eigene Website</span>
+        <span class="toc-dots">···················································</span>
+        <span class="toc-page">11</span>
+      </div>
+      <div class="toc-detail">
+        <div></div>
+        <div class="toc-detail-body">
+          <p>Eine eigene Website ist nicht ein Schaufenster — sie ist die Türklingel des Hauses. Wir bauen sie klar, ruhig, schnell. Mit einer Buchungsstrecke, die nicht stört. Mit Bildern, die nicht lügen. Mit Texten, die wie der Gastgeber selbst klingen.</p>
+          <p>So wird aus jeder Provision, die heute an die Plattformen geht, ein Teil wieder dem Haus zurückgegeben.</p>
+          <div class="signature">Tafel 11 — Direktbuchung</div>
+        </div>
+      </div>
+
+      <div class="toc-row" data-toc="2">
+        <span class="toc-num">03</span>
+        <span class="toc-title">Preisgestaltung & Saisonstrategie</span>
+        <span class="toc-dots">···················································</span>
+        <span class="toc-page">18</span>
+      </div>
+      <div class="toc-detail">
+        <div></div>
+        <div class="toc-detail-body">
+          <p>Preise sind keine Zahlen. Sie sind Versprechen. Wir helfen Gastgebern dabei, ihre Saisonzeiten, ihre Mindestaufenthalte, ihre Angebote so zu gestalten, dass sie wirtschaftlich tragen und gleichzeitig dem Charakter des Hauses entsprechen.</p>
+          <p>Dynamische Preisgestaltung dort, wo sie sinnvoll ist. Ruhe dort, wo Ruhe das bessere Angebot ist.</p>
+          <div class="signature">Tafel 18 — Preisstrategie</div>
+        </div>
+      </div>
+
+      <div class="toc-row" data-toc="3">
+        <span class="toc-num">04</span>
+        <span class="toc-title">Gästekommunikation & Bewertungen</span>
+        <span class="toc-dots">···················································</span>
+        <span class="toc-page">24</span>
+      </div>
+      <div class="toc-detail">
+        <div></div>
+        <div class="toc-detail-body">
+          <p>Eine gute Bewertung ist selten ein Zufall. Sie ist das Ergebnis einer Anreise, die geahnt wurde, einer Nachricht, die zur rechten Zeit kam, einer Verabschiedung, die nachklang.</p>
+          <p>Wir entwickeln Vorlagen, die nicht nach Maschine klingen, und Antworten, die auch nach schwierigen Gästen nicht ihre Würde verlieren.</p>
+          <div class="signature">Tafel 24 — Kommunikation</div>
+        </div>
+      </div>
+
+      <div class="toc-row" data-toc="4">
+        <span class="toc-num">05</span>
+        <span class="toc-title">Reinigungspartner & Service-Netzwerk</span>
+        <span class="toc-dots">···················································</span>
+        <span class="toc-page">31</span>
+      </div>
+      <div class="toc-detail">
+        <div></div>
+        <div class="toc-detail-body">
+          <p>Hinter jedem stillen Frühstück steht jemand, der um sechs Uhr aufgestanden ist. Wir vermitteln Reinigungspartner, Wäschereien, Handwerker und Servicekräfte aus der Region — Menschen, die das Haus mit der gleichen Sorgfalt behandeln wie der Gastgeber selbst.</p>
+          <div class="signature">Tafel 31 — Partnernetzwerk</div>
+        </div>
+      </div>
+
+      <div class="toc-row" data-toc="5">
+        <span class="toc-num">06</span>
+        <span class="toc-title">Nachhaltigkeit & Energieeffizienz</span>
+        <span class="toc-dots">···················································</span>
+        <span class="toc-page">38</span>
+      </div>
+      <div class="toc-detail">
+        <div></div>
+        <div class="toc-detail-body">
+          <p>Nachhaltigkeit ist für uns keine Auszeichnung an der Tür, sondern eine Haltung im Haus. Ökostrom, regionale Produkte, Abfallvermeidung, kurze Wege — alles dort, wo es zum Betrieb passt, nichts erzwungen.</p>
+          <p>Auf Wunsch begleiten wir auch durch Zertifizierungen und Förderprogramme.</p>
+          <div class="signature">Tafel 38 — Nachhaltigkeit</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     BILDERWELT — DREI SZENEN
+     ============================================ -->
+<section class="bilderwelt" id="bilderwelt">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-label reveal">Bilderwelt · Drei Szenen</div>
+      <h2 class="section-head-title reveal">
+        Wofür wir<br>
+        <em>arbeiten.</em>
+      </h2>
+    </div>
+
+    <p class="bilderwelt-intro reveal">
+      Wir gehen ohne Kundenliste an den Start — und das mit Absicht. Bevor wir Häuser begleiten, beschreiben wir lieber, <em>welche Art von Gastlichkeit</em> wir schützen möchten. Drei Szenen, drei Grundsätze.
+    </p>
+
+    <article class="szene reveal">
+      <div class="szene-image image-reveal">
+        <div class="szene-image-inner image-reveal-inner" style="background-image: url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=900&q=80');"></div>
+        <div class="szene-meta">
+          <span>Szene I</span>
+          <span>Der Schlüssel</span>
+        </div>
+      </div>
+      <div class="szene-text">
+        <div class="szene-eyebrow">Szene I · Grundsatz</div>
+        <h3 class="szene-name">Der<br>Schlüssel.</h3>
+        <p class="szene-place">Vertrauen statt Verwaltung</p>
+        <div class="szene-body">
+          <p>Ein Schlüssel, der von einer Hand in eine andere wandert, ist die älteste Form der Gastfreundschaft. Heute ersetzen Codes und Apps oft diese Geste — und manchmal ist das richtig. Aber nie sollte das Werkzeug das Gefühl ersetzen.</p>
+          <p>Wir bauen Technik, die im Hintergrund arbeitet. Self-Check-in, automatisierte Kommunikation, digitale Schlüssel — alles dort, wo es entlastet. Und nirgendwo dort, wo es kalt macht.</p>
+        </div>
+        <blockquote class="szene-quote">
+          „Technik soll dienen, nicht auffallen."
+        </blockquote>
+      </div>
+    </article>
+
+    <article class="szene reveal">
+      <div class="szene-image image-reveal">
+        <div class="szene-image-inner image-reveal-inner" style="background-image: url('https://images.unsplash.com/photo-1551763867-2fa5ac4e25e8?w=900&q=80');"></div>
+        <div class="szene-meta">
+          <span>Szene II</span>
+          <span>Das Fenster</span>
+        </div>
+      </div>
+      <div class="szene-text">
+        <div class="szene-eyebrow">Szene II · Grundsatz</div>
+        <h3 class="szene-name">Das<br>Fenster.</h3>
+        <p class="szene-place">Sichtbarkeit ohne Lärm</p>
+        <div class="szene-body">
+          <p>Ein Haus muss gesehen werden, um besucht zu werden. Aber Sichtbarkeit ist nicht dasselbe wie Lärm. Manche Plattformen verlangen die ganze Aufmerksamkeit eines Gastgebers — und geben dafür nur Provisionen zurück.</p>
+          <p>Wir sehen Sichtbarkeit als ein Fenster: groß genug, dass die richtigen Gäste hereinblicken. Klein genug, dass der Gastgeber Herr im eigenen Haus bleibt.</p>
+        </div>
+        <blockquote class="szene-quote">
+          „Gefunden werden, ohne sich zu verlieren."
+        </blockquote>
+      </div>
+    </article>
+
+    <article class="szene reveal">
+      <div class="szene-image image-reveal">
+        <div class="szene-image-inner image-reveal-inner" style="background-image: url('assets/alp2.png');"></div>
+        <div class="szene-meta">
+          <span>Szene III</span>
+          <span>Der Weg</span>
+        </div>
+      </div>
+      <div class="szene-text">
+        <div class="szene-eyebrow">Szene III · Grundsatz</div>
+        <h3 class="szene-name">Der<br>Weg.</h3>
+        <p class="szene-place">Langsamkeit als Qualität</p>
+        <div class="szene-body">
+          <p>Tourismus, der zählt, beginnt mit einem Weg — von der Stadt aufs Land, vom Lärm in die Stille, vom Bekannten ins Unbekannte. Die kleinen österreichischen Häuser stehen am Ende solcher Wege. Sie sind nicht Endpunkte, sondern Ankunftsorte.</p>
+          <p>Wir glauben, dass nachhaltiger Tourismus aus dieser Langsamkeit geboren wird. Regionale Produkte, Energieeffizienz, kurze Wege — nicht als Etikett, sondern als Haltung.</p>
+        </div>
+        <blockquote class="szene-quote">
+          „Wer langsam ankommt, bleibt länger."
+        </blockquote>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================
+     TESTIMONIAL
+     ============================================ -->
+<section class="testimonial">
+  <div class="container">
+    <span class="testimonial-mark">"</span>
+    <p class="testimonial-quote reveal">
+      Der Tourismus Förder Verband hat uns unzählige Arbeitsstunden erspart und uns Einblicke verschafft, die wir nie für möglich gehalten hätten.
+    </p>
+    <div class="testimonial-cite reveal">Enya R. · Miss Earth Association</div>
+  </div>
+</section>
+
+<!-- ============================================
+     PAKETE
+     ============================================ -->
+<section class="pakete" id="pakete">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-label reveal">Die Pakete · Drei Wege</div>
+      <h2 class="section-head-title reveal">
+        Wie weit wir<br>
+        <em>gemeinsam</em> gehen.
+      </h2>
+    </div>
+
+    <article class="paket reveal">
+      <div class="paket-left">
+        <span class="paket-num">Paket I</span>
+        <h3 class="paket-name">Digital<br>Start</h3>
+        <div class="paket-price">Auf Anfrage</div>
+      </div>
+      <div class="paket-body">
+        <p class="paket-tagline">
+          Für Gastgeber, die online endlich sauber sichtbar werden wollen — ohne sich selbst durch Werkzeuge kämpfen zu müssen.
+        </p>
+        <p class="paket-description">
+          Ein Anfang. Klar, ruhig, ohne Überforderung. Wir setzen die Grundlagen, damit das Haus dort auftaucht, wo Gäste suchen — und beim ersten Eindruck nicht verloren geht.
+        </p>
+        <ul class="paket-list">
+          <li><span>Google Business Optimierung</span></li>
+          <li><span>Booking & Airbnb Basis-Check</span></li>
+          <li><span>Texte für Zimmer und Unterkunft</span></li>
+          <li><span>Direktbuchungs-Anfrageformular</span></li>
+          <li><span>Startberatung für digitale Tools</span></li>
+        </ul>
+        <a href="#kontakt" class="paket-link link-underline">Anfragen</a>
+      </div>
+    </article>
+
+    <article class="paket reveal">
+      <div class="paket-left">
+        <span class="paket-num">Paket II</span>
+        <h3 class="paket-name">Sales<br>Booster</h3>
+        <div class="paket-price">Auf Anfrage</div>
+      </div>
+      <div class="paket-body">
+        <p class="paket-tagline">
+          Für Betriebe mit freien Zimmern und mehr Verkaufspotenzial, als sie heute nutzen können.
+        </p>
+        <p class="paket-description">
+          Wo die Sichtbarkeit besteht, aber die Strategie fehlt: Preise, Saisonzeiten, Direktbuchungen, Bewertungen. Wir bringen Struktur in ein Umfeld, das oft im Bauchgefühl entstanden ist.
+        </p>
+        <ul class="paket-list">
+          <li><span>Plattform-Optimierung & Pflege</span></li>
+          <li><span>Preis- und Saisonstrategie</span></li>
+          <li><span>Direktbuchungs-Website</span></li>
+          <li><span>Bewertungsmanagement</span></li>
+          <li><span>Monatlicher Performance-Bericht</span></li>
+        </ul>
+        <a href="#kontakt" class="paket-link link-underline">Anfragen</a>
+      </div>
+    </article>
+
+    <article class="paket reveal">
+      <div class="paket-left">
+        <span class="paket-num">Paket III</span>
+        <h3 class="paket-name">Full<br>Support</h3>
+        <div class="paket-price">Individuell · Auf Anfrage</div>
+      </div>
+      <div class="paket-body">
+        <p class="paket-tagline">
+          Für Gastgeber, die digitale und operative Entlastung suchen — und einen Partner, der dauerhaft an ihrer Seite bleibt.
+        </p>
+        <p class="paket-description">
+          Eine umfassende Begleitung. Von der Buchungsstrecke bis zur Reinigungsfirma. Vom Channel Manager bis zum Self-Check-in. Wir übernehmen die Komplexität, der Gastgeber behält die Hoheit über sein Haus.
+        </p>
+        <ul class="paket-list">
+          <li><span>PMS & Channel Manager Begleitung</span></li>
+          <li><span>Reinigungspartner & Service-Netzwerk</span></li>
+          <li><span>Self-Check-in Struktur</span></li>
+          <li><span>Gäste-Kommunikation & Automatisierung</span></li>
+          <li><span>Langfristige Gastgeber-Betreuung</span></li>
+        </ul>
+        <a href="#kontakt" class="paket-link link-underline">Anfragen</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================
+     KONTAKT
+     ============================================ -->
+<section class="kontakt" id="kontakt">
+  <div class="kontakt-inner">
+    <div class="kontakt-eyebrow">Kontakt · Nachwort</div>
+
+    <p class="kontakt-text reveal">
+      Wenn Sie wissen möchten, ob wir <em>zueinander passen</em>, schreiben Sie uns einen Brief — oder eine Nachricht, die wie ein Brief klingt.
+    </p>
+
+    <div class="kontakt-signature reveal">
+      <img src="assets/logo.png" alt="TFV" class="kontakt-signature-mark" />
+      <div class="kontakt-signature-text">
+        <span class="kontakt-signature-name">Tourismusförderverband</span>
+        <span class="kontakt-signature-meta">In Gründung · Frühjahr 2026</span>
+      </div>
+    </div>
+
+    <div class="kontakt-grid">
+      <div class="kontakt-block reveal">
+        <div class="kontakt-block-label">Anschrift · Impressum</div>
+        <div class="kontakt-block-content">
+          Tourismusförderverband (iG)<br>
+          Herrgottwiesgasse 90/3<br>
+          8020 Graz<br>
+          Österreich
+        </div>
+      </div>
+
+      <div class="kontakt-block reveal">
+        <div class="kontakt-block-label">Korrespondenz</div>
+        <div class="kontakt-block-content">
+          <a href="mailto:kontakt@tourismusverband.net">kontakt@tourismusverband.net</a><br>
+          <a href="https://tourismusverband.net" target="_blank" rel="noopener">tourismusverband.net</a><br>
+          <br>
+          Für Anfragen, Kooperationen<br>
+          und Gastgeber-Betreuung.
+        </div>
+      </div>
+
+      <div class="kontakt-block reveal">
+        <div class="kontakt-block-label">Verein in Gründung</div>
+        <div class="kontakt-block-content">
+          Wir nehmen ab Frühjahr<br>
+          2026 neue Häuser auf.<br>
+          <br>
+          <a href="mailto:kontakt@tourismusverband.net">Einen Brief schreiben →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© Tourismusförderverband (iG) · Graz · Österreich</div>
+    <div class="footer-links">
+      <a href="#" class="link-underline">Impressum</a>
+      <a href="#" class="link-underline">Datenschutz</a>
+      <a href="#" class="link-underline">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================
+   NAV SCROLL BEHAVIOR
+   ============================================ */
+const mainNav = document.getElementById('mainNav');
+const handleNavScroll = () => {
+  if (window.scrollY > 60) {
+    mainNav.classList.add('scrolled');
+  } else {
+    mainNav.classList.remove('scrolled');
+  }
+};
+window.addEventListener('scroll', handleNavScroll, { passive: true });
+handleNavScroll();
+
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+const reveals = document.querySelectorAll('.reveal, .image-reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+
+reveals.forEach(el => observer.observe(el));
+
+/* ============================================
+   TOC ACCORDION
+   ============================================ */
+const tocRows = document.querySelectorAll('.toc-row');
+tocRows.forEach(row => {
+  row.addEventListener('click', () => {
+    const wasActive = row.classList.contains('active');
+    // Close all
+    tocRows.forEach(r => r.classList.remove('active'));
+    // Open this one if it wasn't already
+    if (!wasActive) {
+      row.classList.add('active');
+    }
+  });
+});
+
+/* ============================================
+   PARALLAX (gentle, on hero image)
+   ============================================ */
+const heroImg = document.querySelector('.hero-image-inner');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (heroImg && y < window.innerHeight * 1.5) {
+    heroImg.style.transform = `scale(1) translateY(${y * 0.15}px)`;
+  }
+}, { passive: true });
+
+</script>
+
+</body>
+</html>
