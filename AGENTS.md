@@ -1,43 +1,82 @@
 # AGENTS Guide – TFV Multi-Concept Websites
 
-Bu doküman, bu repo üzerinde çalışacak bir sonraki yapay zekâ/gelistirici için operasyonel kılavuzdur.
+Bu doküman, bu repo üzerinde çalışacak bir sonraki yapay zekâ/geliştirici için kapsamlı operasyon kılavuzudur.
 
 ## 1) Proje Özeti
-- Bu repo içinde müşteri sunumu için hazırlanmış **6 farklı web sitesi konsepti** vardır.
-- Klasör yapısı konsept bazlıdır:
-  - `1/` ... `6/` her biri ayrı konsepti temsil eder.
-- Kök dizinde (`/workspace/tfv`) müşterinin tüm konseptleri tek yerden görüp seçebilmesi için bir **landing page** bulunur: `index.html`.
+- Repo, müşteri sunumu için hazırlanmış **6 farklı web konsepti** içerir.
+- Dizin yapısı konsept bazlıdır: `1/`, `2/`, `3/`, `4/`, `5/`, `6/`.
+- Kök dizindeki `index.html`, tüm konseptlere giden **landing page**’dir.
+- `sitemap.xml`, landing page + konsept giriş sayfalarını listeler.
 
-## 2) Mimari ve Navigasyon
-- Landing page: `index.html`
-  - Konsept kartlarını listeler.
-  - Her kart ilgili konseptin giriş sayfasına gider (`./{n}/index.html`).
-- SEO yardımcı dosyası: `sitemap.xml`
-  - Landing page ve 6 konsept ana sayfası listelenmiştir.
+## 2) Kritik Operasyon Notları
+- Tüm linkler **göreli (relative)** kalmalıdır.
+- Özellikle `2/` ve `6/` konseptlerinde görseller kök klasörde tutulur; `assets/...` yerine doğrudan dosya adı kullanılır (örn. `logo.png`, `hotel-system.png`).
+- Netlify/benzeri ortamlarda kırık görselin en yaygın sebebi yanlış göreli path’tir.
+- Görsel kırığı debug sırası:
+  1. HTML/CSS içinde `src` / `href` / `background-image` yollarını kontrol et.
+  2. Dosya gerçekten aynı klasörde mi kontrol et.
+  3. Büyük-küçük harf (case-sensitive) uyumu kontrol et.
+  4. Deploy sonrası network panelde 404 path’lerini doğrula.
 
-## 3) İçerik Düzeni
-- Konseptlerin bazıları çok sayfalıdır (örn. `1/`, `4/`, `5/`), bazıları tek sayfa yaklaşımına daha yakındır (örn. `2/`, `3/`, `6/`).
-- Stil dosyaları konsept klasörlerinde `assets/style.css` şeklinde olabilir.
+## 3) Konsept Bazlı Mimari Özeti
 
-## 4) Geliştirme Prensipleri
-- Landing page üzerinde değişiklik yapılırken:
-  - Tüm linkler göreli ve çalışır kalmalı.
-  - Mobil uyum korunmalı.
-  - Kart içerikleri müşteri seçimini kolaylaştıracak şekilde net olmalı.
-- SEO iyileştirmelerinde:
-  - `title`, `description`, `canonical`, OpenGraph ve Twitter meta etiketleri düşünülmeli.
-  - Yapılandırılmış veri (JSON-LD) mümkünse eklenmeli.
-  - Yeni sayfa eklendiyse `sitemap.xml` güncellenmeli.
+### Konsept 1 (`1/`)
+- Çok sayfalı kurumsal yapı.
+- Yardımcı sayfalar: `leistungen.html`, `digitalisierung.html`, `kontakt.html`, `ueber-uns.html`.
+- Stil ve görseller: `1/assets/`.
 
-## 5) Görev Sonu Checklist
-Her görev sonunda minimum şu kontrolleri yap:
-1. Linkler kırık mı?
+### Konsept 2 (`2/`)
+- Tek sayfa, editoryal premium yaklaşım.
+- Ana dosya: `2/index.html`.
+- Görseller: `2/logo.png`, `2/alpfotos.png`, `2/alp2.png`.
+- **Not:** Bu klasörde `assets/` yoktur; path’ler doğrudan dosya adına gitmelidir.
+
+### Konsept 3 (`3/`)
+- Minimal tek sayfa yaklaşımı.
+- Ana dosya: `3/index.html`.
+
+### Konsept 4 (`4/`)
+- Çok sayfalı ve içerik bölümlü kurgu.
+- Sayfalar: `index.html`, `leistungen.html`, `digitalisierung.html`, `modell.html`, `kontakt.html`.
+- Stil/görseller: `4/assets/`.
+
+### Konsept 5 (`5/`)
+- Hizmet ve sistem anlatımı güçlü, çok sayfalı yapı.
+- Sayfalar: `index.html`, `services.html`, `systeme.html`, `hub.html`, `kontakt.html`.
+- Stil/görseller: `5/assets/`.
+
+### Konsept 6 (`6/`)
+- Koyu temalı, teknoloji odaklı tek sayfa.
+- Ana dosya: `6/index.html`.
+- Görseller: `6/logo.png`, `6/devices.png`, `6/hotel-system.png`, `6/people.png`.
+- **Not:** Bu klasörde de `assets/` yoktur; doğrudan dosya adı path’i kullanılmalıdır.
+
+## 4) Landing Page ve SEO İlkeleri
+- Landing page dili müşteri isteğine göre güncel tutulmalı (örn. Almanca).
+- Temel SEO:
+  - `title`
+  - `meta description`
+  - `canonical`
+  - OpenGraph (`og:*`)
+  - Twitter Card (`twitter:*`)
+  - doğru `lang` ve `og:locale`
+  - mümkünse JSON-LD (`CollectionPage` + konsept linkleri)
+- Landing card açıklamaları müşteri seçim sürecini kolaylaştıracak kadar net olmalı.
+
+## 5) Sitemap Politikası
+- Her görev sonunda `sitemap.xml` kontrol edilir.
+- Yeni bir sayfa üretildiyse sitemap’e eklenir.
+- Yeni sayfa yoksa sitemap değişmeden bırakılır (gereksiz churn yapma).
+
+## 6) Görev Sonu Checklist (Zorunlu)
+1. Linkler/görseller kırık mı?
 2. Yeni sayfa varsa `sitemap.xml` güncellendi mi?
-3. SEO temel metaları mevcut mu?
-4. Bu `AGENTS.md` güncel mi?
+3. SEO metaları (title/description/canonical/OG/Twitter/JSON-LD) uygun mu?
+4. `AGENTS.md` bu görev öğrenimleriyle güncellendi mi?
+5. `git diff` ile sadece amaçlı değişiklikler kaldı mı?
 
-## 6) Hızlı Komutlar
-- Değişiklikleri gör: `git status --short`
-- Farkı incele: `git diff -- <dosya>`
+## 7) Hızlı Komutlar
+- Durum: `git status --short`
+- Fark: `git diff -- <dosya>`
+- Kırık path arama: `rg -n "assets/|src=|background-image" <dosya>`
 - Commit: `git add -A && git commit -m "..."`
-
