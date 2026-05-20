@@ -100,11 +100,13 @@ p{margin:0;color:var(--muted)}
 .footer .brand strong{color:#fff}
 .footer-links{display:flex;gap:24px;font-weight:850;font-size:13px}
 @media(max-width:1040px){
-  .nav{grid-template-columns:1fr auto}
-  .navlinks{grid-column:1/-1;order:3;justify-content:flex-start;overflow-x:auto;padding-bottom:4px}
+  .nav{height:auto;grid-template-columns:1fr auto;gap:14px;padding:12px 0}
+  .navlinks{grid-column:1/-1;order:3;justify-content:flex-start;overflow-x:auto;padding:4px 0 6px}
+  .navlinks a{padding:10px 0;border-bottom-width:2px}
 }
 @media(max-width:860px){
   .topbar{display:none}
+  .actions{justify-self:end}
   .actions .primary{display:none}
   .hero-inner,.section-head,.system-map,.two-col,.host-section,.contact-grid,.footer-grid{grid-template-columns:1fr}
   .os-grid,.problem-grid,.modules,.workflow,.pricing-note{grid-template-columns:1fr 1fr}
@@ -114,8 +116,13 @@ p{margin:0;color:var(--muted)}
 }
 @media(max-width:560px){
   .container{padding:0 18px}
-  .brand strong{font-size:11px}
-  .navlinks{gap:18px;font-size:13px}
+  .header{position:static}
+  .nav{grid-template-columns:1fr auto;gap:10px}
+  .brand{gap:8px}
+  .mark{width:38px;height:38px;font-size:15px}
+  .brand strong{font-size:10px;letter-spacing:.04em}
+  .phone{width:38px;height:38px}
+  .navlinks{gap:14px;font-size:12px}
   h1{font-size:44px}
   .os-grid,.problem-grid,.modules,.workflow,.pricing-note,.form-row{grid-template-columns:1fr}
 }
