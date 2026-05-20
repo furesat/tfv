@@ -80,3 +80,14 @@ Bu doküman, bu repo üzerinde çalışacak bir sonraki yapay zekâ/geliştirici
 - Fark: `git diff -- <dosya>`
 - Kırık path arama: `rg -n "assets/|src=|background-image" <dosya>`
 - Commit: `git add -A && git commit -m "..."`
+
+## 8) Mobile Header / Navigation Rehberi (Yeni Öğrenimler)
+- Konsept 4 ve 5’te mobil header karışıklığını önlemek için nav alanı dar ekranda **yüksekliği sabit olmayan (auto)** yapıda tutulmalı.
+- 1060px–860px aralığında menü satırı ikinci satıra düşebilir; bu durumda:
+  - Menü kapsayıcısı (`.navlinks` / `.links`) yatay kaydırılabilir olmalı (`overflow:auto`).
+  - Linklerin üst-alt padding’i mobilde küçültülmeli (ör. `10px 0`), masaüstündeki büyük padding korunmamalı.
+- 560px altı için:
+  - Brand işareti (`.mark`) ve telefon butonu (`.phone`) küçültülmeli.
+  - Linkler arası boşluk azaltılmalı (ör. `gap: 14px`).
+  - Gerekirse header fixed/sticky davranışı sadeleştirilmeli (özellikle konsept 4’te `position: static`, konsept 5’te üstte sticky).
+- Mobile-first prensibi: önce küçük ekranda okunabilirlik ve taşmama garanti edilmeli, sonra geniş ekran geliştirmeleri eklenmeli.
