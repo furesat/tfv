@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+<title id="title">TFV Wappen Logo</title><desc id="desc">Schild mit Berg und Tanne.</desc>
+<path d="M128 18 36 52v68c0 58 37 97 92 118 55-21 92-60 92-118V52z" fill="#14532D"/>
+<path d="M128 42 58 68v51c0 44 24 73 70 92 46-19 70-48 70-92V68z" fill="#FAFAFA"/>
+<path d="m79 154 26-36 18 22 25-34 30 48z" fill="#14532D"/>
+<circle cx="171" cy="88" r="15" fill="#E11D48"/>
+<path d="M76 186h104v14H76z" fill="#E11D48"/>
+</svg>

@@ -91,3 +91,38 @@ Bu doküman, bu repo üzerinde çalışacak bir sonraki yapay zekâ/geliştirici
   - Linkler arası boşluk azaltılmalı (ör. `gap: 14px`).
   - Gerekirse header fixed/sticky davranışı sadeleştirilmeli (özellikle konsept 4’te `position: static`, konsept 5’te üstte sticky).
 - Mobile-first prensibi: önce küçük ekranda okunabilirlik ve taşmama garanti edilmeli, sonra geniş ekran geliştirmeleri eklenmeli.
+
+## 9) Konsept 7 (`7/`) – Strategisch + Rechtskonform (Neu)
+- Primärzielgruppe: kleine & familiengeführte Vermieter (Gruppe 1), Gruppe 2/3 sekundär.
+- Informationsarchitektur folgt den **6 Problemgruppen** (Marketing, Digitalisierung, Wirtschaftlichkeit, Personal, Recht, Zukunft).
+- Dateien:
+  - `7/index.html` (Startseite mit semantischem HTML5, Skip-Link, OG/Twitter, JSON-LD, Cookie-Banner)
+  - `7/impressum.html` (AT-konformes Impressum-Muster)
+  - `7/datenschutz.html` (DSGVO-Muster)
+  - `7/robots.txt` (Sitemap-Hinweis)
+  - `7/wappen-logo.svg` (mehrfarbiges Wappenlogo)
+  - `7/favicon.svg` (abstraktes Icon für Favicon/Social)
+  - `7/assets/style.css`, `7/assets/cookie.js`
+- Corporate Design:
+  - Modern-Nature-Palette: `#14532D`, `#E11D48`, `#FAFAFA`
+  - Typo: Inter + Source Serif
+  - 60-30-10 visuelle Verteilung (Off-White / Green / Red)
+- SEO/Technik:
+  - Canonical, Robots, OG, Twitter, JSON-LD zorunlu tutuldu.
+  - Mobil öncelikli düzen; sticky header + yatay scroll olabilen nav.
+- Görev kapanışında kontrol:
+  1) `index.html` landing card + JSON-LD konsept sayısı güncellendi mi?
+  2) `sitemap.xml` yeni URL’leri içeriyor mu?
+  3) `7/robots.txt` sitemap referansı korunuyor mu?
+
+## 10) Konsept 7 Modernizasyon Notu (2026-05-21)
+- `7/index.html` ve `7/assets/style.css` modernize edildi:
+  - Daha güçlü hero hiyerarşisi (eyebrow + çift CTA)
+  - Kart tabanlı modern görsel dil (yumuşak gölge + radius)
+  - Sticky, yarı saydam header (backdrop blur)
+  - 6 problem grubuna dayalı yapı korunarak CRO akışı güçlendirildi.
+- SEO/teknik temel aynı kaldı: canonical, OG, Twitter, JSON-LD, skip-link, semantik yapı.
+- Konsept 7’de ileride yapılacaklarda öncelik:
+  1) gerçek görseller/başarı metrikleri eklemek,
+  2) form tabanlı lead toplama,
+  3) AA kontrast ölçüm raporunu dosyalamak.
