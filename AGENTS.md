@@ -114,3 +114,15 @@ Bu doküman, bu repo üzerinde çalışacak bir sonraki yapay zekâ/geliştirici
   1) `index.html` landing card + JSON-LD konsept sayısı güncellendi mi?
   2) `sitemap.xml` yeni URL’leri içeriyor mu?
   3) `7/robots.txt` sitemap referansı korunuyor mu?
+
+## 10) Konsept 7 Modernizasyon Notu (2026-05-21)
+- `7/index.html` ve `7/assets/style.css` modernize edildi:
+  - Daha güçlü hero hiyerarşisi (eyebrow + çift CTA)
+  - Kart tabanlı modern görsel dil (yumuşak gölge + radius)
+  - Sticky, yarı saydam header (backdrop blur)
+  - 6 problem grubuna dayalı yapı korunarak CRO akışı güçlendirildi.
+- SEO/teknik temel aynı kaldı: canonical, OG, Twitter, JSON-LD, skip-link, semantik yapı.
+- Konsept 7’de ileride yapılacaklarda öncelik:
+  1) gerçek görseller/başarı metrikleri eklemek,
+  2) form tabanlı lead toplama,
+  3) AA kontrast ölçüm raporunu dosyalamak.
