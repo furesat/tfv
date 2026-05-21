@@ -91,3 +91,9 @@ Bu doküman, bu repo üzerinde çalışacak bir sonraki yapay zekâ/geliştirici
   - Linkler arası boşluk azaltılmalı (ör. `gap: 14px`).
   - Gerekirse header fixed/sticky davranışı sadeleştirilmeli (özellikle konsept 4’te `position: static`, konsept 5’te üstte sticky).
 - Mobile-first prensibi: önce küçük ekranda okunabilirlik ve taşmama garanti edilmeli, sonra geniş ekran geliştirmeleri eklenmeli.
+
+
+## 9) Yeni Öğrenimler
+- Landing page artık 8 konsepti listeliyor (`1`-`8`). Yeni konsept eklendiğinde kartlar, SEO sayıları ve JSON-LD birlikte güncellenmeli.
+- Konsept 7 bu repoda başlangıç/vitrin sayfası olarak eklendi (`7/index.html`).
+- Konsept 8 çok sayfalı yapıda ayrı klasörde bulunur; landing ve sitemap senkron tutulmalıdır.
