@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 96" role="img" aria-label="Tourismusförderverband Österreich Wappen">
+  <title>Tourismusförderverband Österreich</title>
+  <desc>Wappen mit stilisiertem Bergmotiv, Variante für dunkle Hintergründe</desc>
+  <path d="M 12 8 L 68 8 L 68 50 Q 68 80 40 92 Q 12 80 12 50 Z" fill="none" stroke="#FAFAFA" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 22 64 L 35 42 L 41 52 L 48 38 L 58 64 Z" fill="#FAFAFA"/>
+  <circle cx="40" cy="26" r="2.8" fill="#E11D48"/>
+</svg>
