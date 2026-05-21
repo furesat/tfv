@@ -3,8 +3,8 @@
 Bu doküman, bu repo üzerinde çalışacak bir sonraki yapay zekâ/geliştirici için kapsamlı operasyon kılavuzudur.
 
 ## 1) Proje Özeti
-- Repo, müşteri sunumu için hazırlanmış **6 farklı web konsepti** içerir.
-- Dizin yapısı konsept bazlıdır: `1/`, `2/`, `3/`, `4/`, `5/`, `6/`.
+- Repo, müşteri sunumu için hazırlanmış çoklu web konseptleri içerir (aktif olarak landing sayfasında 8 konsept listelenir: `1-6`, `8`, `9`).
+- Dizin yapısı konsept bazlıdır: `1/`, `2/`, `3/`, `4/`, `5/`, `6/`, `8/`, `9/` (not: `7/` kaldırıldı).
 - Kök dizindeki `index.html`, tüm konseptlere giden **landing page**’dir.
 - `sitemap.xml`, landing page + konsept giriş sayfalarını listeler.
 
@@ -51,6 +51,20 @@ Bu doküman, bu repo üzerinde çalışacak bir sonraki yapay zekâ/geliştirici
 - Görseller: `6/logo.png`, `6/devices.png`, `6/hotel-system.png`, `6/people.png`.
 - **Not:** Bu klasörde de `assets/` yoktur; doğrudan dosya adı path’i kullanılmalıdır.
 
+
+
+### Konsept 8 (`8/`)
+- Çok sayfalı yapı; müşteri akışına göre alt sayfalarla ilerler.
+- Landing ve kök sitemap içinde mutlaka `8/index.html` referansı bulunmalıdır.
+- Konsept 8 içerisinde yapılan yeni sayfalar kendi klasörüne eklenmeli ve gerekli olduğunda kök sitemap ile senkron kontrol edilmelidir.
+
+### Konsept 9 (`9/`)
+- Çok sayfalı, kurumsal/dernek odaklı yapı (TFV Österreich).
+- Ana sayfa: `9/index.html`.
+- Yardımcı sayfalar: `leistungen.html`, `zielgruppen.html`, `ueber-uns.html`, `kontakt.html`, `impressum.html`, `datenschutz.html`.
+- Stil/script/görseller: `9/assets/`.
+- Klasör içi ek SEO dosyaları: `9/sitemap.xml`, `9/robots.txt`.
+
 ## 4) Landing Page ve SEO İlkeleri
 - Landing page dili müşteri isteğine göre güncel tutulmalı (örn. Almanca).
 - Temel SEO:
@@ -94,6 +108,7 @@ Bu doküman, bu repo üzerinde çalışacak bir sonraki yapay zekâ/geliştirici
 
 
 ## 9) Yeni Öğrenimler
-- Landing page artık 8 konsepti listeliyor (`1`-`8`). Yeni konsept eklendiğinde kartlar, SEO sayıları ve JSON-LD birlikte güncellenmeli.
-- Konsept 7 bu repoda başlangıç/vitrin sayfası olarak eklendi (`7/index.html`).
+- Landing page 8 konsepti listeler fakat aktif numaralar `1-6`, `8`, `9` şeklindedir. Sayısal süreklilik zorunlu değildir; içerik olarak aktif set korunur.
+- Konsept 7 kaldırıldı; landing, sitemap ve yapı dokümantasyonunda `7` referansı bırakılmamalıdır.
 - Konsept 8 çok sayfalı yapıda ayrı klasörde bulunur; landing ve sitemap senkron tutulmalıdır.
+- Konsept 9 çok sayfalı, SEO odaklı bir kurumsal/dernek sitesi yapısıdır (`9/index.html` + yardımcı sayfalar). Landing kart metni ve JSON-LD girişi mutlaka güncel tutulmalıdır.
