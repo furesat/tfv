@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="de" data-lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="Interaktiver zweisprachiger Leitfaden für GitHub Organizations, Rollen, Ownership, Monorepos und die Zielstruktur von Agentur, TFV und Fures." />
+  <title>GitHub Organisationssystem | TFV · Agentur · Fures</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Start">
+      <span class="brand-mark">G</span>
+      <span>
+        <strong>GitHub Organisationssystem</strong>
+        <small>TFV · Agentur · Fures</small>
+      </span>
+    </a>
+    <div class="top-actions">
+      <div class="lang-switch" aria-label="Sprache">
+        <button id="lang-de" class="active" type="button">DE</button>
+        <button id="lang-tr" type="button">TR</button>
+      </div>
+      <button id="edit-structure" class="button button-secondary" type="button"></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="eyebrow" id="hero-eyebrow"></div>
+      <h1 id="hero-title"></h1>
+      <p class="hero-copy" id="hero-copy"></p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#target" id="hero-primary"></a>
+        <a class="button button-ghost" href="#basics" id="hero-secondary"></a>
+      </div>
+
+      <div class="hero-diagram" aria-label="Organisationsdiagramm">
+        <div class="person-node">👤 <span id="diagram-person-a">Andreas</span></div>
+        <div class="person-node">👤 <span id="diagram-person-b">Furkan</span></div>
+        <div class="person-node">👤 <span id="diagram-person-c">Gülben</span></div>
+        <div class="flow-arrow">↓</div>
+        <div class="org-row" id="hero-org-row"></div>
+        <div class="flow-arrow">↓</div>
+        <div class="repo-row">
+          <span>Repositories</span>
+          <span>Projects</span>
+          <span>Teams</span>
+          <span>Deployments</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="basics">
+      <div class="section-heading">
+        <span class="kicker" id="basics-kicker"></span>
+        <h2 id="basics-title"></h2>
+        <p id="basics-intro"></p>
+      </div>
+      <div class="grid three" id="basics-cards"></div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <span class="kicker" id="roles-kicker"></span>
+        <h2 id="roles-title"></h2>
+      </div>
+      <div class="role-layout">
+        <article class="panel">
+          <h3 id="org-roles-title"></h3>
+          <div class="role-stack" id="org-roles"></div>
+        </article>
+        <article class="panel">
+          <h3 id="repo-roles-title"></h3>
+          <div class="role-stack" id="repo-roles"></div>
+        </article>
+      </div>
+      <div class="notice" id="ownership-notice"></div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <span class="kicker" id="enterprise-kicker"></span>
+        <h2 id="enterprise-title"></h2>
+        <p id="enterprise-copy"></p>
+      </div>
+      <div class="enterprise-flow" id="enterprise-flow"></div>
+    </section>
+
+    <section class="section shell" id="target">
+      <div class="section-heading">
+        <span class="kicker" id="target-kicker"></span>
+        <h2 id="target-title"></h2>
+        <p id="target-copy"></p>
+      </div>
+      <div class="target-grid" id="target-grid"></div>
+      <div class="legend" id="target-legend"></div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <span class="kicker" id="repo-kicker"></span>
+        <h2 id="repo-title"></h2>
+        <p id="repo-copy"></p>
+      </div>
+      <div class="compare" id="repo-compare"></div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <span class="kicker" id="deploy-kicker"></span>
+        <h2 id="deploy-title"></h2>
+        <p id="deploy-copy"></p>
+      </div>
+      <div class="deploy-diagram">
+        <div class="repo-box">
+          <strong>tfv-websites</strong>
+          <code>apps/tourismusverband</code>
+          <code>apps/goodlife</code>
+          <code>apps/partnerportal</code>
+          <code>packages/corporate-design</code>
+        </div>
+        <div class="deploy-lines">
+          <span>→</span><span>→</span><span>→</span>
+        </div>
+        <div class="deploy-sites">
+          <div><strong>Netlify A</strong><small>tourismusverband.net</small></div>
+          <div><strong>Netlify B</strong><small>Goodlife Tours</small></div>
+          <div><strong>Netlify C</strong><small>Partnerportal</small></div>
+        </div>
+      </div>
+      <div class="notice" id="deploy-notice"></div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <span class="kicker" id="free-kicker"></span>
+        <h2 id="free-title"></h2>
+      </div>
+      <div class="stats" id="free-stats"></div>
+      <p class="source-note" id="free-note"></p>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <span class="kicker" id="migration-kicker"></span>
+        <h2 id="migration-title"></h2>
+      </div>
+      <ol class="timeline" id="migration-list"></ol>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading">
+        <span class="kicker" id="faq-kicker"></span>
+        <h2 id="faq-title"></h2>
+      </div>
+      <div class="faq" id="faq-list"></div>
+    </section>
+
+    <section class="section shell sources">
+      <div class="section-heading">
+        <span class="kicker" id="sources-kicker"></span>
+        <h2 id="sources-title"></h2>
+      </div>
+      <div class="source-links">
+        <a href="https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations" target="_blank" rel="noreferrer">GitHub Docs · About organizations ↗</a>
+        <a href="https://docs.github.com/en/organizations/managing-peoples-access-to-your-organization-with-roles/roles-in-an-organization" target="_blank" rel="noreferrer">GitHub Docs · Organization roles ↗</a>
+        <a href="https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization" target="_blank" rel="noreferrer">GitHub Docs · Repository roles ↗</a>
+        <a href="https://docs.github.com/en/enterprise-cloud@latest/admin/concepts/enterprise-best-practices/organize-work" target="_blank" rel="noreferrer">GitHub Docs · Enterprise best practices ↗</a>
+        <a href="https://docs.github.com/en/billing/concepts/product-billing/github-actions" target="_blank" rel="noreferrer">GitHub Docs · Actions billing ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <span>GitHub System Guide</span>
+    <span id="footer-copy"></span>
+  </footer>
+
+  <dialog id="editor-dialog">
+    <form method="dialog" class="editor-card">
+      <div class="editor-head">
+        <div>
+          <span class="kicker" id="editor-kicker"></span>
+          <h2 id="editor-title"></h2>
+        </div>
+        <button class="icon-button" value="cancel" aria-label="Close">×</button>
+      </div>
+      <p id="editor-help"></p>
+      <textarea id="structure-json" spellcheck="false"></textarea>
+      <div class="editor-actions">
+        <button class="button button-ghost" id="reset-structure" type="button"></button>
+        <button class="button button-secondary" id="export-structure" type="button"></button>
+        <label class="button button-secondary file-button">
+          <span id="import-label"></span>
+          <input id="import-structure" type="file" accept="application/json" />
+        </label>
+        <button class="button button-primary" id="save-structure" type="button"></button>
+      </div>
+      <p class="editor-status" id="editor-status"></p>
+    </form>
+  </dialog>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
